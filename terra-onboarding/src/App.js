@@ -1,5 +1,4 @@
 import './App.css';
-import Button from './components/Button.js';
 import Header from './components/Header.js';
 import BoxContent from './components/BoxContent.js';
 import ConnectSample from './components/Test.js';
