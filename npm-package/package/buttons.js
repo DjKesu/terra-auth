@@ -11,13 +11,13 @@ const paymentButtonAction = (e) => {
 const buttonStyle = `
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	height: calc(40px + 20px);
-	width: 150px;
+	width: 200px;
 	font-size: 25px;
 	border: 4px solid black;
 	border-radius: 15px;
-	padding: 10px;
+	padding: 5px;
 	margin: 5px;
 	box-sizing: border-box;
 	text-align: center;
@@ -31,23 +31,40 @@ const hoverButtonStyle = buttonStyle + `
 	color: black;
 `;
 
+const buttonImage = `
+	height: 100%;
+	width: auto;
+	margin: 0 5px;
+`
+
+
 const getButton = (buttonType) => {
 	const button = document.createElement("button");
-	const buttonText = document.createElement("p");
+
+	const buttonText = document.createElement("span");
 	buttonText.innerText = 
 		buttonType==="login"?"Login":
 		buttonType==="logout"?"Logout":
 		buttonType==="payment"?"Pay Here":
 		"Error";
+
+
 	button.style = buttonStyle;
-	button.onmouseover = (e) => e.target.style = hoverButtonStyle;
-	button.onmouseout = (e) => e.target.style = buttonStyle;
-
+	button.onmouseover = () => button.style = hoverButtonStyle;
+	button.onmouseout = () => button.style = buttonStyle;
+	
 	const logo = document.createElement('img');
-	logo.src = './assets/GFYLogo.svg';
+	logo.src = '../package/assets/GFYLogo.svg';
+	logo.style = buttonImage;
 
+	const icon = document.createElement('img');
+	icon.src = `../package/assets/${buttonType=="login"?"login.svg":"logout.svg"}`
+	icon.style = buttonImage;
+	
+	
 	button.appendChild(logo);
 	button.appendChild(buttonText);
+	button.appendChild(icon);
 	return button;
 }
 
