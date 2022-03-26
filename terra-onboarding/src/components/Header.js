@@ -5,17 +5,15 @@ function Header() {
     <header className="Header">
       <h1 
       style={{
-          fontFamily: "Montserrat",
-          fontSize: 30,
+          fontSize: 95,
           fontWeight: "bold",
-          color: "black",
+          color: "white",
           textAlign: "center"}}>
       Terra Station Authentication</h1>
       <p
         style={{
-          fontFamily: "Montserrat",
-          fontSize: 14,
-          color: "black",
+          fontSize: 34,
+          color: "white",
           textAlign: "center"
         }}
       >

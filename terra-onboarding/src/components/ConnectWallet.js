@@ -24,14 +24,14 @@ export default function ConnectWallet() {
               <button
                 key={"install-" + connectType}
                 onClick={() => install(connectType)}
-                className="login-with-google-btn"
+                className="super-cool-button"
               >
                 Install {connectType}
               </button>
             ))}
             <button
               onClick={() => connect(availableConnectTypes[0])}
-              className="login-with-google-btn"
+              className="super-cool-button"
             >
               Login with Terra
             </button>
@@ -41,7 +41,7 @@ export default function ConnectWallet() {
         {status === WalletStatus.WALLET_CONNECTED && (
           <button
             onClick={() => disconnect()}
-            className="login-with-google-btn"
+            className="super-cool-button"
           >
             Disconnect
           </button>
