@@ -74,3 +74,23 @@ body {
   text-align: center;
   padding-top: 2rem;
 }
+
+#form {
+  width: 40vw;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+.inputBox{
+  margin:1em auto 2em auto;
+}
+input 				{
+  font-size:18px;
+  padding:20px 20px 20px 10px;
+  display:block;
+  width:70%;
+  border:none;
+  border-bottom:1px solid #757575;
+  margin: auto;
+}
+input:focus 		{ outline:none; }
