@@ -1,26 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 import Button from './components/Button.js';
+import Header from './components/Header.js';
+import BoxContent from './components/BoxContent.js';
 
 //hi guys! its me
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button text = "lol"/>
-      </header>
+      <Header/>
+      <h1>Log in with your wallet!</h1>
+      <div className='BoxContent'>
+        <p>Click here to sign in with your existing wallet!</p>
+        <Button text = "Import Wallet"/>
+      </div>
+      <div className='BoxContent'>
+        <p>Don't have a wallet? Click here to make on!</p>
+        <Button text = "Create Wallet"/>
+      </div>
     </div>
   );
 }
