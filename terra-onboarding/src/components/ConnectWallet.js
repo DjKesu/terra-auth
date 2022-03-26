@@ -18,25 +18,6 @@ export default function ConnectWallet() {
 
   return (
     <div>
-      <h1>Connect Sample</h1>
-      <section>
-        <pre>
-          {JSON.stringify(
-            {
-              status,
-              network,
-              wallets,
-              supportFeatures: Array.from(supportFeatures),
-              availableConnectTypes,
-              availableInstallTypes,
-            },
-            null,
-            2
-          )}
-        </pre>
-      </section>
-
-      <footer>
         {status === WalletStatus.WALLET_NOT_CONNECTED && (
           <>
             {availableInstallTypes.map((connectType) => (
@@ -65,7 +46,6 @@ export default function ConnectWallet() {
             Disconnect
           </button>
         )}
-      </footer>
     </div>
   );
 }
