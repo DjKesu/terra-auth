@@ -30,9 +30,10 @@ const hoverButtonStyle =
 `;
 
 const buttonImage = `
-	height: 100%;
+	height: 10%;
 	width: auto;
 	margin: 0 5px;
+  background-image: url("/npm-package/package/assets/TerrAuthLogo.svg");
 `;
 
 const getButton = (buttonType) => {
@@ -49,7 +50,7 @@ const getButton = (buttonType) => {
       : "Error";
 
   button.style = buttonStyle;
-  button.style.backgroundImage = `url("./TerrAuthLogo.svg")`;
+  // button.style.backgroundImage = `url("./TerrAuthLogo.svg")`;
   button.onmouseover = () => (button.style = hoverButtonStyle);
   button.onmouseout = () => (button.style = buttonStyle);
 
