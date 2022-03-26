@@ -10,7 +10,7 @@ const paymentButtonAction = (e) => {
 
 const buttonStyle = `
   transition: background-color 0.3s, box-shadow 0.3s;
-  padding: 12px 16px 12px 42px;
+  padding: 20px;
   border: none;
   border-radius: 3px;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
@@ -30,12 +30,12 @@ const hoverButtonStyle =
 `;
 
 const buttonImage = `
-	height: 10%;
-	width: auto;
-	margin: 0 5px;
-  background-image: url("/npm-package/package/assets/TerrAuthLogo.svg");
+	height: 20px;
+	width: 20px;
+	margin: 0px;
 `;
 
+//background-image: url("/npm-package/package/assets/TerrAuthLogo.svg");
 const getButton = (buttonType) => {
   const button = document.createElement("button");
 
@@ -60,19 +60,11 @@ const getButton = (buttonType) => {
   // button.appendChild(logo);
 
   const icon = document.createElement("img");
-  icon.src = `../package/assets/${
-    buttonType == "login"
-      ? "login.svg"
-      : buttonType == "logout"
-      ? "logout.svg"
-      : buttonType == "payment"
-      ? "payment.svg"
-      : null
-  }`;
+  icon.src = `../package/assets/TerrAuthLogo.svg`;
   icon.style = buttonImage;
 
-  button.appendChild(buttonText);
   button.appendChild(icon);
+  button.appendChild(buttonText);
   return button;
 };
 
