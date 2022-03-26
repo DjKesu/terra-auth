@@ -1,5 +1,5 @@
 import { useWallet, WalletStatus } from "@terra-money/wallet-provider";
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css";
 
 export default function ConnectWallet() {
@@ -16,9 +16,18 @@ export default function ConnectWallet() {
     disconnect,
   } = useWallet();
 
+  // const checkExtension = (status, availableInstallTypes) => {
+  //   if(status === WalletStatus.Installed && availableInstallTypes.includes('extension')) {
+  //     console.log('Extension is installed');
+  //   }
+  // }
+  
+  // useEffect(() => {
+  //   checkExtension(status, availableInstallTypes);
+  // },[]);
+
   return (
     <div>
-      <h1>Connect Sample</h1>
       <section>
         <pre>
           {JSON.stringify(
@@ -28,6 +37,7 @@ export default function ConnectWallet() {
               wallets,
               supportFeatures: Array.from(supportFeatures),
               availableConnectTypes,
+              availableConnections,
               availableInstallTypes,
             },
             null,
@@ -36,7 +46,7 @@ export default function ConnectWallet() {
         </pre>
       </section>
 
-      <footer>
+      <div>
         {status === WalletStatus.WALLET_NOT_CONNECTED && (
           <>
             {availableInstallTypes.map((connectType) => (
@@ -65,7 +75,7 @@ export default function ConnectWallet() {
             Disconnect
           </button>
         )}
-      </footer>
+      </div>
     </div>
   );
 }

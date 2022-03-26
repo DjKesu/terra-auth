@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-        <button type="button" className="login-with-google-btn">Recover Terra Station Wallet</button>
+        {/* <button type="button" className="login-with-google-btn">Recover Terra Station Wallet</button> */}
         <button type="button" className="login-with-google-btn">Create New Terra Station Wallet</button>
         <StepFlow/>
       <ConnectWallet/>
