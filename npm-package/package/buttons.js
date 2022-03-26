@@ -1,5 +1,3 @@
-
-
 const loginButtonAction = (e) => {
 	console.log("Login");
 }
@@ -10,17 +8,68 @@ const paymentButtonAction = (e) => {
 	console.log("Payment");
 }
 
-const getButtonHTML = (buttonType) => {
-	return `
-		<button>
-			${
-				buttonType==="login"?"Login":
-				buttonType==="logout"?"Logout":
-				buttonType==="payment"?"Pay Here":
-				"Error"
-			}
-		</button>
-	`
+const buttonStyle = `
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: calc(40px + 20px);
+	width: 215px;
+	font-size: 20px;
+	border: 4px solid black;
+	border-radius: 15px;
+	padding: 5px;
+	margin: 5px;
+	box-sizing: border-box;
+	text-align: center;
+	background-color: #094D92;
+	color: white;
+	transition: background-color 0.3s, color 0.3s;
+	cursor: pointer;
+`;
+const hoverButtonStyle = buttonStyle + `
+	background-color: white;
+	color: black;
+`;
+
+const buttonImage = `
+	height: 100%;
+	width: auto;
+	margin: 0 5px;
+`
+
+
+const getButton = (buttonType) => {
+	const button = document.createElement("button");
+
+	const buttonText = document.createElement("span");
+	buttonText.innerText = 
+		buttonType==="login"?"Login with Terra":
+		buttonType==="logout"?"Logout of Terra":
+		buttonType==="payment"?"Pay with Terra":
+		"Error"
+
+
+	button.style = buttonStyle;
+	button.onmouseover = () => button.style = hoverButtonStyle;
+	button.onmouseout = () => button.style = buttonStyle;
+	
+	// const logo = document.createElement('img');
+	// logo.src = '../package/assets/GFYLogo.svg';
+	// logo.style = buttonImage;
+	// button.appendChild(logo);
+
+	const icon = document.createElement('img');
+	icon.src = `../package/assets/${
+		buttonType=="login"?"login.svg":
+		buttonType=="logout"?"logout.svg":
+		buttonType=="payment"?"payment.svg":
+		null}`
+	icon.style = buttonImage;
+	
+	
+	button.appendChild(buttonText);
+	button.appendChild(icon);
+	return button;
 }
 
 const renderButton = (buttonType) => {
@@ -41,7 +90,7 @@ const renderButton = (buttonType) => {
 		default:
 			throw "Invalid buttonType";
 	}
-	if (button) button.innerHTML = getButtonHTML(buttonType);
+	if (button) button.appendChild(getButton(buttonType));
 	else console.log("no button for "+buttonType);
 
 }
