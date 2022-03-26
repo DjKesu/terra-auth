@@ -8,16 +8,9 @@ import ConnectSample from './components/Test.js';
 function App() {
   return (
     <div className="App">
-      {/* <Header/>
-      <h1>Log in with your wallet!</h1>
-      <div className='BoxContent'>
-        <p>Click here to sign in with your existing wallet!</p>
-        <Button text = "Import Wallet"/>
-      </div>
-      <div className='BoxContent'>
-        <p>Don't have a wallet? Click here to make on!</p>
-        <Button text = "Create Wallet"/>
-      </div> */}
+      <Header/>
+        <button type="button" className="login-with-google-btn">Recover Terra Station Wallet</button>
+        <button type="button" className="login-with-google-btn">Create New Terra Station Wallet</button>
       <ConnectSample/>
     </div>
   );
