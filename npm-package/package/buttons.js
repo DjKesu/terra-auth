@@ -9,6 +9,9 @@ const paymentButtonAction = (e) => {
 }
 
 const buttonStyle = `
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	height: calc(40px + 20px);
 	width: 150px;
 	font-size: 25px;
@@ -30,7 +33,8 @@ const hoverButtonStyle = buttonStyle + `
 
 const getButton = (buttonType) => {
 	const button = document.createElement("button");
-	button.innerText = 
+	const buttonText = document.createElement("p");
+	buttonText.innerText = 
 		buttonType==="login"?"Login":
 		buttonType==="logout"?"Logout":
 		buttonType==="payment"?"Pay Here":
@@ -38,6 +42,12 @@ const getButton = (buttonType) => {
 	button.style = buttonStyle;
 	button.onmouseover = (e) => e.target.style = hoverButtonStyle;
 	button.onmouseout = (e) => e.target.style = buttonStyle;
+
+	const logo = document.createElement('img');
+	logo.src = './assets/GFYLogo.svg';
+
+	button.appendChild(logo);
+	button.appendChild(buttonText);
 	return button;
 }
 
